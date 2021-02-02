@@ -16,6 +16,10 @@ class LoginScreenState extends State<LoginScreen> {
           children: [
             emailField(),
             passwordField(),
+            SizedBox(
+              width: 10.0,
+              height: 10.0,
+            ),
             submitButton(),
           ],
         ),
