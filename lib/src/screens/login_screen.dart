@@ -13,9 +13,27 @@ class LoginScreenState extends State<LoginScreen> {
       margin: EdgeInsets.all(20.0),
       child: Form(
         child: Column(
-          children: [],
+          children: [
+            emailField(),
+            // passwordField(),
+            // submitButton(),
+          ],
         ),
       ),
     );
   }
+
+  // helper methods for fields and submit button
+  Widget emailField() {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: 'Email Address',
+        hintText: 'you@example.com',
+      ),
+    );
+  }
+
+  Widget passwordField() {}
+
+  Widget submitButton() {}
 }
