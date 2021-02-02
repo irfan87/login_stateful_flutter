@@ -51,6 +51,9 @@ class LoginScreenState extends State<LoginScreen> {
 
         return null;
       },
+      onSaved: (String value) {
+        print(value);
+      },
     );
   }
 
@@ -72,6 +75,9 @@ class LoginScreenState extends State<LoginScreen> {
 
         return null;
       },
+      onSaved: (String value) {
+        print(value);
+      },
     );
   }
 
@@ -79,7 +85,10 @@ class LoginScreenState extends State<LoginScreen> {
     return ElevatedButton(
       onPressed: () {
         // TODO: 3.) USE formKey with reset() to reset the form
-        formKey.currentState.validate();
+        if (formKey.currentState.validate()) {
+          // to save and retrieved the value after validate
+          formKey.currentState.save();
+        }
       },
       child: Text('Submit'),
     );
