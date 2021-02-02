@@ -10,6 +10,10 @@ class LoginScreenState extends State<LoginScreen> {
   // TODO: 1.) CREATE THE FORM KEY AND DEFINED IT AS GLOBAL KEY
   final formKey = GlobalKey<FormState>();
 
+  // send both email and password
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +56,8 @@ class LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
-        print(value);
+        // assigned email associated that we created above
+        email = value;
       },
     );
   }
@@ -76,7 +81,8 @@ class LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
-        print(value);
+        // assigned password assicoated that we created above
+        password = value;
       },
     );
   }
@@ -88,6 +94,7 @@ class LoginScreenState extends State<LoginScreen> {
         if (formKey.currentState.validate()) {
           // to save and retrieved the value after validate
           formKey.currentState.save();
+          print('Time to post $email and $password to my API');
         }
       },
       child: Text('Submit'),
